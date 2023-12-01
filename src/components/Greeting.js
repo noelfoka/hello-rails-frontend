@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const Greeting = () => {
-  const { message, isLoading, error } = useSelector((store) => store.greetings);
+  const { greeting, isLoading, error } = useSelector((store) => store.greetings);
 
   if (isLoading) {
     return (
@@ -17,9 +17,9 @@ const Greeting = () => {
       </p>
     );
   }
-  if (message) {
+  if (greeting) {
     return (
-      <h1>{ message }</h1>
+      <h1>{ greeting }</h1>
     );
   }
   return <p>No messages found.</p>;
